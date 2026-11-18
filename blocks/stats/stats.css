@@ -1,0 +1,94 @@
+.stats {
+  --stats-bg: transparent;
+  --stats-value-color: var(--color-brand-700);
+  --stats-label-color: var(--color-neutral-800);
+  --stats-divider-color: var(--color-neutral-300);
+
+  background-color: var(--stats-bg);
+  color: var(--stats-label-color);
+}
+
+.stats .stats-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: var(--spacing-medium);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stats .stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xsmall);
+  padding: var(--spacing-small);
+  text-align: center;
+}
+
+.stats .stats-item + .stats-item {
+  border-top: var(--shape-border-width-1) solid var(--stats-divider-color);
+}
+
+.stats .stats-value {
+  margin: 0;
+  color: var(--stats-value-color);
+  font-size: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.stats .stats-label {
+  margin: 0;
+  max-width: 24ch;
+  color: var(--stats-label-color);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+@media (width >= 600px) {
+  .stats .stats-item + .stats-item {
+    border-top: 0;
+  }
+}
+
+@media (width >= 900px) {
+  .stats .stats-list {
+    gap: var(--spacing-big);
+  }
+
+  .stats .stats-item {
+    padding: var(--spacing-medium) var(--spacing-small);
+  }
+}
+
+/* dark variant: "Stats (dark)" */
+.stats.dark {
+  --stats-bg: var(--color-neutral-900);
+  --stats-value-color: var(--color-neutral-50);
+  --stats-label-color: var(--color-neutral-300);
+  --stats-divider-color: var(--color-opacity-24);
+
+  padding: var(--spacing-big) var(--spacing-medium);
+  border-radius: var(--shape-border-radius-2);
+}
+
+@media (width >= 900px) {
+  .stats.dark {
+    padding: var(--spacing-xxbig) var(--spacing-big);
+  }
+}
+
+.stats.dark a:any-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media (forced-colors: active) {
+  .stats.dark {
+    border: var(--shape-border-width-1) solid CanvasText;
+  }
+}
