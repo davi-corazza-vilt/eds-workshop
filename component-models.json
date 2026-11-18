@@ -223,6 +223,48 @@
     ]
   },
   {
+    "id": "stats",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "stat",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "value",
+        "label": "Number",
+        "description": "Large figure, e.g. 1.2M, 98%, 24/7",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Label",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "table",
     "fields": [
       {
